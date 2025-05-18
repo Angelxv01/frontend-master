@@ -1,8 +1,9 @@
 import RecipePageMain from "./components/recipe-page-main";
+import SocialLinksProfileMain from "./components/social-links-profile-main";
 
 const generator = [
   {
-    id: "recipe-page",
+    id: "recipe-page-main",
     Component: RecipePageMain,
   },
 ];
@@ -12,7 +13,8 @@ export default function App() {
 
   return (
     <div>
-      <RecipePageMain />
+      {/* <RecipePageMain /> */}
+      <SocialLinksProfileMain />
       {/* <Manager state={state} setState={setState} /> */}
     </div>
   );
