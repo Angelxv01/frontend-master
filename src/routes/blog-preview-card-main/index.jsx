@@ -1,6 +1,10 @@
-import "./index.css";
+import { createFileRoute } from "@tanstack/react-router";
 
-export default function App() {
+export const Route = createFileRoute("/blog-preview-card-main/")({
+  component: App,
+});
+
+function App() {
   return (
     <main className="font-[Figtree] bg-yellow-400 min-h-screen grid place-items-center">
       <section className="bg-white shadow-neutral-900/30 shadow-lg rounded-3xl overflow-hidden w-sm flex flex-col p-6 gap-4">

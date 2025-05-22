@@ -1,6 +1,10 @@
-import "./index.css";
+import { createFileRoute } from "@tanstack/react-router";
 
-export default function App() {
+export const Route = createFileRoute("/social-links-profile-main/")({
+  component: App,
+});
+
+function App() {
   return (
     <main className="bg-zinc-900 text-white font-[Inter] min-h-screen grid place-items-center">
       <section className="bg-zinc-800 w-sm flex flex-col items-center py-8 px-6 rounded-lg gap-6">

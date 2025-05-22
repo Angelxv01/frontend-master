@@ -1,4 +1,10 @@
-export default function App() {
+import { createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/norway-mountains/")({
+  component: App,
+});
+
+function App() {
   return (
     <div className="relative w-full h-screen">
       <div className="bg-[url(/norway-mountains/robert-bye-HTzGwHaN7VA-unsplash.jpg)] bg-cover bg-center absolute inset-0 z-0"></div>

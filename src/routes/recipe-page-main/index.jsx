@@ -1,6 +1,10 @@
-import "./index.css";
+import { createFileRoute } from "@tanstack/react-router";
 
-export default function App() {
+export const Route = createFileRoute("/recipe-page-main/")({
+  component: App,
+});
+
+function App() {
   return (
     <main className="text-stone-700 font-[Outfit] md:bg-orange-100 md:py-16">
       <div className="md:max-w-3xl md:bg-white md:mx-auto md:rounded-xl md:overflow-hidden">
