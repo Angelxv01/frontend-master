@@ -17,6 +17,7 @@ import { Route as ReferencesIndexImport } from './routes/references/index'
 import { Route as RecipePageMainIndexImport } from './routes/recipe-page-main/index'
 import { Route as NorwayMountainsIndexImport } from './routes/norway-mountains/index'
 import { Route as BlogPreviewCardMainIndexImport } from './routes/blog-preview-card-main/index'
+import { Route as ArtYakaterinburgIndexImport } from './routes/art-yakaterinburg/index'
 
 // Create/Update Routes
 
@@ -57,6 +58,12 @@ const BlogPreviewCardMainIndexRoute = BlogPreviewCardMainIndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const ArtYakaterinburgIndexRoute = ArtYakaterinburgIndexImport.update({
+  id: '/art-yakaterinburg/',
+  path: '/art-yakaterinburg/',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -66,6 +73,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/art-yakaterinburg/': {
+      id: '/art-yakaterinburg/'
+      path: '/art-yakaterinburg'
+      fullPath: '/art-yakaterinburg'
+      preLoaderRoute: typeof ArtYakaterinburgIndexImport
       parentRoute: typeof rootRoute
     }
     '/blog-preview-card-main/': {
@@ -110,6 +124,7 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/art-yakaterinburg': typeof ArtYakaterinburgIndexRoute
   '/blog-preview-card-main': typeof BlogPreviewCardMainIndexRoute
   '/norway-mountains': typeof NorwayMountainsIndexRoute
   '/recipe-page-main': typeof RecipePageMainIndexRoute
@@ -119,6 +134,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/art-yakaterinburg': typeof ArtYakaterinburgIndexRoute
   '/blog-preview-card-main': typeof BlogPreviewCardMainIndexRoute
   '/norway-mountains': typeof NorwayMountainsIndexRoute
   '/recipe-page-main': typeof RecipePageMainIndexRoute
@@ -129,6 +145,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/art-yakaterinburg/': typeof ArtYakaterinburgIndexRoute
   '/blog-preview-card-main/': typeof BlogPreviewCardMainIndexRoute
   '/norway-mountains/': typeof NorwayMountainsIndexRoute
   '/recipe-page-main/': typeof RecipePageMainIndexRoute
@@ -140,6 +157,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/art-yakaterinburg'
     | '/blog-preview-card-main'
     | '/norway-mountains'
     | '/recipe-page-main'
@@ -148,6 +166,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/art-yakaterinburg'
     | '/blog-preview-card-main'
     | '/norway-mountains'
     | '/recipe-page-main'
@@ -156,6 +175,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/art-yakaterinburg/'
     | '/blog-preview-card-main/'
     | '/norway-mountains/'
     | '/recipe-page-main/'
@@ -166,6 +186,7 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArtYakaterinburgIndexRoute: typeof ArtYakaterinburgIndexRoute
   BlogPreviewCardMainIndexRoute: typeof BlogPreviewCardMainIndexRoute
   NorwayMountainsIndexRoute: typeof NorwayMountainsIndexRoute
   RecipePageMainIndexRoute: typeof RecipePageMainIndexRoute
@@ -175,6 +196,7 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArtYakaterinburgIndexRoute: ArtYakaterinburgIndexRoute,
   BlogPreviewCardMainIndexRoute: BlogPreviewCardMainIndexRoute,
   NorwayMountainsIndexRoute: NorwayMountainsIndexRoute,
   RecipePageMainIndexRoute: RecipePageMainIndexRoute,
@@ -193,6 +215,7 @@ export const routeTree = rootRoute
       "filePath": "__root.jsx",
       "children": [
         "/",
+        "/art-yakaterinburg/",
         "/blog-preview-card-main/",
         "/norway-mountains/",
         "/recipe-page-main/",
@@ -202,6 +225,9 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.jsx"
+    },
+    "/art-yakaterinburg/": {
+      "filePath": "art-yakaterinburg/index.jsx"
     },
     "/blog-preview-card-main/": {
       "filePath": "blog-preview-card-main/index.jsx"
